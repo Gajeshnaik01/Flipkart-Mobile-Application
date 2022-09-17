@@ -1,0 +1,11 @@
+platformVersion 10
+deviceId x4soukivqw59pnjr
+appPackage com.flipkart.android
+appActivity com.flipkart.android.activity.HomeFragmentHolderActivity 
+urlAddress http://localhost:4723/wd/hub
+
+
+
+
+
+
