@@ -14,7 +14,7 @@ public class InsertProductToCart extends BaseClass {
 	public void insertProductToCart() {
 		
 		homePage.clickSearchBtn();
-		String catgory=excelUtility.getDataFromExcelSheet("FLIPKART", 2, 1);
+		String catgory=excelUtility.getDataFromExcelSheet(IConstants.sheetName, 2, 1);
 		homePage.sendSearchTxtBox(catgory);
 		ThreadSafeClass.getMobileUtility().waittillElement(2000);
 		ThreadSafeClass.getMobileUtility().tapAction(1, 500, 300, 500);
@@ -22,7 +22,7 @@ public class InsertProductToCart extends BaseClass {
 		excelUtility.setDataToExcel("FLIPKART", 2, 2, product);
 		excelUtility.saveWrittenDataToExcel(IConstants.EXCELFILEPATH);
 		ListenerImpClass.testLog.info("Data is added to excel");
-		String expectedProduct=excelUtility.getDataFromExcelSheet("FLIPKART", 2, 2);
+		String expectedProduct=excelUtility.getDataFromExcelSheet(IConstants.sheetName, 2, 2);
 		productPage.clickOnProduct(expectedProduct);
 		productPage.clickAddToCart();
 		ListenerImpClass.testLog.info(expectedProduct+" is added to cart");
